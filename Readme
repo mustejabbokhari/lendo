@@ -1,0 +1,10 @@
+Run localhost:8080/lendo/oauth/token to generate access token
+post API user name password mentioned in application.properties
+Use access token to run three API's
+localhost:8080/lendo/comments
+if pass post id it will filter comments of post ?postID=1628
+localhost:8080/lendo/posts
+if pass user id it will filter posts of user ?userID=1628
+localhost:8080/lendo/users
+return all the user.
+build project and run project.
