@@ -1,4 +1,5 @@
 Run localhost:8080/lendo/oauth/token to generate access token
+We added client authentication level so add username password in authentication.
 post API user name password mentioned in application.properties
 Use access token to run three API's
 localhost:8080/lendo/comments
@@ -8,3 +9,30 @@ if pass user id it will filter posts of user ?userID=1628
 localhost:8080/lendo/users
 return all the user.
 build project and run project.
+
+
+
+Curl Request To call authentication token.
+
+curl --location --request POST 'localhost:8080/lendo/oauth/token' \
+--header 'Authorization: Basic bXVzdGVqYWI6bXVzdGFoc2luQDEyMyE=' \
+--form 'grant_type="password"' \
+--form 'username="mustejab"' \
+--form 'password="mustahsin@1"'
+
+
+
+Curl Request to Get Comments
+
+curl --location --request GET 'localhost:8080/lendo/comments' \
+--header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTgxMTE5OTIsInVzZXJfbmFtZSI6Im11c3RlamFiIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IkUyS3FwTG5KbmdZMjlIdHRzeWpzcjdKNllQQSIsImNsaWVudF9pZCI6Im11c3RlamFiIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.duq3ZIQrjpF0Buh4KpSLtjMufb9uh4NVVlT7ig4Rq4GaIZqH9hzSoc26aHtNijZ2OchxwNBT3EqfoNf04UL1tSZZjNxgfEXdwEYx35sPlbjt6Zzonwlcll4hpE04nPUrsEyFBjWudbtEZTiWMg3Yv0qjD_KTBmkZ08UMi1zS8vIyngGT6jUX5MMme_QwiAg2QABCtua4dSMPRrrfGspXtBrdo1FguXI0JnmN21ooeYP2KJMQiErwJ5OZvjC4l8P0Ko9QUOtPN39J9O63_8TS5BihLaadIEDXbKnsuhfAp_PcNF82vKF6F6H-okEqHSvXLTojyTqiOPpVE79oY8krlA'
+
+
+Curl Request to Get Posts
+curl --location --request GET 'localhost:8080/lendo/posts' \
+--header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTgxMTE5OTIsInVzZXJfbmFtZSI6Im11c3RlamFiIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IkUyS3FwTG5KbmdZMjlIdHRzeWpzcjdKNllQQSIsImNsaWVudF9pZCI6Im11c3RlamFiIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.duq3ZIQrjpF0Buh4KpSLtjMufb9uh4NVVlT7ig4Rq4GaIZqH9hzSoc26aHtNijZ2OchxwNBT3EqfoNf04UL1tSZZjNxgfEXdwEYx35sPlbjt6Zzonwlcll4hpE04nPUrsEyFBjWudbtEZTiWMg3Yv0qjD_KTBmkZ08UMi1zS8vIyngGT6jUX5MMme_QwiAg2QABCtua4dSMPRrrfGspXtBrdo1FguXI0JnmN21ooeYP2KJMQiErwJ5OZvjC4l8P0Ko9QUOtPN39J9O63_8TS5BihLaadIEDXbKnsuhfAp_PcNF82vKF6F6H-okEqHSvXLTojyTqiOPpVE79oY8krlA'
+
+Curl Request to Get Users.
+
+curl --location --request GET 'localhost:8080/lendo/users' \
+--header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTgxMTE5OTIsInVzZXJfbmFtZSI6Im11c3RlamFiIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IkUyS3FwTG5KbmdZMjlIdHRzeWpzcjdKNllQQSIsImNsaWVudF9pZCI6Im11c3RlamFiIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.duq3ZIQrjpF0Buh4KpSLtjMufb9uh4NVVlT7ig4Rq4GaIZqH9hzSoc26aHtNijZ2OchxwNBT3EqfoNf04UL1tSZZjNxgfEXdwEYx35sPlbjt6Zzonwlcll4hpE04nPUrsEyFBjWudbtEZTiWMg3Yv0qjD_KTBmkZ08UMi1zS8vIyngGT6jUX5MMme_QwiAg2QABCtua4dSMPRrrfGspXtBrdo1FguXI0JnmN21ooeYP2KJMQiErwJ5OZvjC4l8P0Ko9QUOtPN39J9O63_8TS5BihLaadIEDXbKnsuhfAp_PcNF82vKF6F6H-okEqHSvXLTojyTqiOPpVE79oY8krlA'
