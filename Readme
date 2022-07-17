@@ -1,5 +1,7 @@
 Run localhost:8080/lendo/oauth/token to generate access token
 We added client authentication level so add username password in authentication.
+user name :mustejab
+password:mustahsin@1
 post API user name password mentioned in application.properties
 Use access token to run three API's
 localhost:8080/lendo/comments
